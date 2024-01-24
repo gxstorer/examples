@@ -1,0 +1,40 @@
+\begin{table}[htbp]\centering \small
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Monthly Variation in Food Insecurity \label{month_insecurity}}
+\begin{tabular}{l*{3}{cc}}
+\toprule
+                &\multicolumn{2}{c}{(1)}     &\multicolumn{2}{c}{(2)}     &\multicolumn{2}{c}{(3)}     \\
+                &\multicolumn{2}{c}{  \textbf{Baseline}  }&\multicolumn{2}{c}{\textbf{Household FE}}&\multicolumn{2}{c}{ \textbf{Demographic Controls}}\\
+                &Food Insecurity         &       SE&Food Insecurity         &       SE&Food Insecurity         &       SE\\
+\midrule
+\textbf{Months:}&                  &         &                  &         &                  &         \\
+February        &    -0.03\sym{*}  &   (0.01)&    -0.03\sym{*}  &   (0.01)&    -0.03\sym{*}  &   (0.01)\\
+March           &     0.01         &   (0.02)&     0.01         &   (0.02)&     0.01         &   (0.02)\\
+April           &     0.09\sym{***}&   (0.02)&     0.09\sym{***}&   (0.02)&     0.09\sym{***}&   (0.02)\\
+May             &     0.14\sym{***}&   (0.03)&     0.14\sym{***}&   (0.03)&     0.14\sym{***}&   (0.03)\\
+June            &     0.28\sym{***}&   (0.03)&     0.28\sym{***}&   (0.03)&     0.28\sym{***}&   (0.03)\\
+July            &     0.43\sym{***}&   (0.03)&     0.43\sym{***}&   (0.03)&     0.43\sym{***}&   (0.03)\\
+August          &     0.40\sym{***}&   (0.03)&     0.40\sym{***}&   (0.03)&     0.40\sym{***}&   (0.03)\\
+September       &     0.10\sym{***}&   (0.03)&     0.10\sym{***}&   (0.03)&     0.10\sym{***}&   (0.03)\\
+October         &    -0.03\sym{**} &   (0.01)&    -0.03\sym{**} &   (0.01)&    -0.03\sym{**} &   (0.01)\\
+November        &    -0.03\sym{**} &   (0.01)&    -0.03\sym{**} &   (0.01)&    -0.03\sym{**} &   (0.01)\\
+December        &    -0.04\sym{***}&   (0.01)&    -0.04\sym{***}&   (0.01)&    -0.04\sym{***}&   (0.01)\\
+\textbf{Controls:}&                  &         &                  &         &                  &         \\
+Female          &                  &         &                  &         &     0.01         &   (0.01)\\
+Age             &                  &         &                  &         &     0.00\sym{***}&   (0.00)\\
+Secondary Edu.  &                  &         &                  &         &     0.03         &   (0.02)\\
+High School Edu.&                  &         &                  &         &     0.04\sym{*}  &   (0.02)\\
+Household Size  &                  &         &                  &         &     0.00         &   (0.00)\\
+Number of Dependents&                  &         &                  &         &    -0.00\sym{*}  &   (0.00)\\
+Cooperative Member&                  &         &                  &         &     0.01         &   (0.01)\\
+Coffee Experience (Yrs)&                  &         &                  &         &    -0.00\sym{*}  &   (0.00)\\
+Constant        &     0.04\sym{***}&   (0.01)&     0.04\sym{***}&   (0.01)&    -0.03         &   (0.04)\\
+\midrule
+Observations    &     3300         &         &     3300         &         &     3300         &         \\
+\(R^{2}\)       &    0.208         &         &    0.296         &         &    0.212         &         \\
+Household fixed effects&       NO         &         &      YES         &         &       NO         &         \\
+\bottomrule
+\multicolumn{7}{c}{\footnotesize Clustered standard errors in parentheses}\\
+\multicolumn{7}{c}{\footnotesize \sym{*} \(p<.10\), \sym{**} \(p<.05\), \sym{***} \(p<.01\)}\\
+\end{tabular}
+\end{table}

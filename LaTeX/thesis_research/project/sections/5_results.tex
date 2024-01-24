@@ -1,0 +1,30 @@
+\documentclass[../main.tex]{subfiles}
+
+\doublespacing
+
+\begin{document}
+
+\subsection{Seasonality \& Food Insecurity}
+
+When running models \ref{eq:food_insecurity_baseline}-\ref{eq:food_insecurity_controls} as displayed in Table \ref{month_insecurity}, the relationship between month and food insecurity remains significant at a 0.1\% level for the months of April through September throughout all three specifications of the baseline, fixed effects, and demographic controls.  October through December were significant at the 2\% level. As displayed in Figure \ref{fig:monthly_occurrences}, the months of March through September are positively correlated with food insecurity, while the months of October through February are negatively correlated.  
+\subsection{Honey Producers \& Food Insecurity}
+
+In the regressions of food insecurity, food insecurity is the dependent variable, and a negative coefficient indicates that a true (=1) value of a given independent variable is negatively correlated with the probability of being food insecure. With the difference-in-differences approach (model \ref{eq:DiD}) of being a honey producer in the honey harvest season, we find a negative point estimate of -0.0719 for food insecurity in all three specifications of the baseline, with individual fixed effects, and with demographic controls as seen in models \ref{eq:food_insecurity_baseline}-\ref{eq:food_insecurity_controls}. Figure \ref{fig:parallel_trends} displays the parallel trends assumption of these findings. For the months outside of the honey season (July – March), the probability of experiencing food insecurity was 13.4\% for honey producers, and 13.1\% for non-honey producers. For the months of April – June, food insecurity increases by 2\% for a total of 15.4\% for honey producers, meanwhile non-honey producers’ exposure to food insecurity raises by 9.2\% to a total of 22.3\%. The parallel trends assumption would project the expected level of food insecurity for honey producers during April – June to be 22.6\%, when the realized outcome was 7.2\% below what was projected. This can also be stated as being a honey producer lowered the season effect on food insecurity by 78\%. However, with clustered standard errors, these results are just past the 10\% significance level under this set of specification.
+
+\subsubsection{Instrumental Variable Approach}
+
+Table \ref{IV} displays models \ref{eq:2sls_OLS}-\ref{eq:2sls_2nd_Stage}, where column (1) displays the OLS specification with individual fixed effects, like in Table \ref{DiD}. Column (2) displays the first stage on the instrumental variable of share of region being honey producers on honey producers is 0.90 and is significant at a 0.01\% level and an F statistic of 89.50 indicates it to be a strong instrument. When using an instrumented difference-in-differences approach (model \ref{eq:2sls_2nd_Stage}, displayed column (3)), being a honey producer during the honey harvest season has a coefficient of -0.188, and is significant at a 2\% level. The OLS and the IV stages agree with the direction that the relationship between honey producers and food insecurity has, in that both indicate a negative relationship. However, the IV estimates that the effect of being a honey producer is actually larger than the season effect, in that during the months of April – June, honey producers’ exposure to food insecurity lowers by 7.3\%, meanwhile non-honey producers experience an increased exposure of 11.5%.
+
+\subsection{Robustness Checks}
+
+The null hypothesis is that the difference in coefficients in a 2SLS specification between OLS and IV is not systematic, and that the treatment variable of honey producer is not biased. To test this hypothesis, the Hausman Test was conducted on the OLS and IV regressions shown in Table \ref{IV} results in a prob > chi2 = 0.2145. Since the p-value does not cross below 0.05, we fail to reject the null hypothesis that there are not systematic differences between OLS and IV. 
+
+\subsubsection{Lean Season}
+
+If income smoothing is a contributing factor to seasonal hunger, then the effect of being a honey producer should diminish in the months following the honey harvest season. The lean season begins in the final month of the honey season and extends out through the month of August. To see if the effect of honey extends into the lean season, I rerun models \ref{eq:2sls_OLS} - \ref{eq:2sls_2nd_Stage}, but replacing the honey season for the lean season (June – August). Table \ref{IV_lean} shows that as expected, the effect of being in the lean season significantly increases food insecurity exposure by 34.8\% (1) – 36.3\% (2) over the constant probability of 6.4\%. Being a honey producer has very little effect in OLS (-0.6\%) and moderately in IV (-8.3\%), but neither are statistically significant. 
+
+\subsubsection{Substitution Between Income Sources}
+
+In the remote mountains of the Chiapas Highlands, Tseltal families that live on agricultural ejidos have limited options to generate income.  We distinguish two types of in-farm income activities (coffee and honey sales) and two types of off-farm activities (day labor and internal migration). Figures \ref{fig:income_sources}-\ref{fig:other_income} displays the overall components of income and correlation among types of off-farm income for honey producers and non-honey producers. Approximately two-thirds of both groups do not receive off-farm income. Producers appear to be substituting between intensifying coffee production and diversifying into honey production on farm and between day labor and internal migration off-farm.
+
+\end{document}

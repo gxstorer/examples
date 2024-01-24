@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% double space this, since it is a working paper
+\usepackage{setspace}
+\doublespacing
+
+\usepackage[backend=biber,style=apa,sorting=nyt]{biblatex}
+\usepackage[letterpaper]{geometry}
+
+\usepackage{amsmath}
+\usepackage{lscape}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xr}
+
+\addbibresource{project/sections/references_grant.bib}
+
+\usepackage{subfiles}
+
+\begin{document}
+
+\subfile{project/sections/0_title_page}
+
+\section{Introduction}
+\externaldocument{1_introduction}
+\subfile{project/sections/1_introduction}
+
+\section{Theoretical Framework}
+\externaldocument{2_theoretical_framework}
+\subfile{project/sections/2_theoretical_framework}
+
+\section{Methodology and Data}
+\externaldocument{3_methodology_&_data}
+\subfile{project/sections/3_methodology_&_data}
+
+\section{Empirical Strategy}
+\externaldocument{4_empirical}
+\subfile{project/sections/4_empirical}
+
+\section{Results}
+\externaldocument{5_results}
+\subfile{project/sections/5_results}
+
+\section{Summary}
+\externaldocument{6_summary}
+\subfile{project/sections/6_summary}
+
+\printbibliography
+
+
+\section{Appendix}
+\externaldocument{7_appendix}
+\subfile{project/sections/7_appendix}
+\end{document}

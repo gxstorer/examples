@@ -1,0 +1,27 @@
+\begin{table}[htbp]\centering \small
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Effect of Honey Producers in Honey Season on Food Insecurity \label{IV}}
+\begin{tabular}{l*{3}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+                &\multicolumn{1}{c}{  \textbf{OLS}  }&\multicolumn{1}{c}{\textbf{1st Stage}}&\multicolumn{1}{c}{ \textbf{IV}}\\
+                &Food Insecurity         &Food Insecurity         &Food Insecurity         \\
+\midrule
+Honey Producer x Honey Season&    -0.07         &                  &    -0.19\sym{**} \\
+                &   (0.04)         &                  &   (0.08)         \\
+Honey Season    &     0.09\sym{***}&                  &     0.12\sym{***}\\
+                &   (0.02)         &                  &   (0.03)         \\
+IV: Honey In Region&                  &     0.90\sym{***}&                  \\
+                &                  &   (0.10)         &                  \\
+Constant        &     0.13\sym{***}&     0.02         &     0.13\sym{***}\\
+                &   (0.00)         &   (0.03)         &   (0.00)         \\
+\midrule
+Observations    &     3300         &      275         &     3300         \\
+\(R^{2}\)       &    0.098         &    0.247         &                  \\
+Household fixed effects&      YES         &       NO         &      YES         \\
+F-Statistic     &    10.25         &    89.50         &                  \\
+\bottomrule
+\multicolumn{4}{c}{\footnotesize Clustered standard errors in parentheses}\\
+\multicolumn{4}{c}{\footnotesize \sym{*} \(p<.10\), \sym{**} \(p<.05\), \sym{***} \(p<.01\)}\\
+\end{tabular}
+\end{table}

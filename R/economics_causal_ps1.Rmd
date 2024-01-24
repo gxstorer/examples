@@ -1,0 +1,88 @@
+---
+title: "Probelem set-1 in R"
+output:
+  word_document: default
+  html_notebook: default
+---
+
+```{r}
+library(haven)
+setwd("~/Dropbox/School/USF/Econometrics Causal/Original Data")
+data <- read_dta("ps1_standard_errors.dta")
+```
+
+2. (Really) Understanding Robust and Clustered Standard Errors: 
+
+a)	Using the data we practiced with in lecture, where consumption = (70, 65, 90, 95, 110, 115, 80, 200, 190, 100) 
+and income = (80, 100, 120, 140, 160, 180, 200, 220, 240, 260), first simply code regress consumption income in 
+Stata to get an OLS estimate of the relationship between consumption and income. 
+```{r}
+
+library("dplyr")
+#Using rename()
+data <- data %>% rename("consumtion" = "ys")
+data <- data %>% rename("income" = "Xs")
+
+```
+
+simple regression 
+```{r}
+reg = lm(consumtion~income, data = data)
+summary(reg)
+```
+b.  estimate for β ̂ = (X'X)^-1(X'y). (Don't forget to include the column of 1's so that you estimate an intercept.)
+```{r}
+data$residuals <- residuals(reg)
+data$r_sqr ='^'(data$residuals,2)
+data
+```
+
+
+
+```{r}
+X <- cbind(data$ones, data$income)
+y <- cbind(data$consumtion)
+X
+y
+```
+matrix Betas = (invsym(X' * X)) * (X' * y)
+```{r}
+betas <- (solve(t(X)%*%X))%*%((t(X))%*%y)
+betas
+```
+
+
+c)manually calculate the OLS standard error for  β ̂.  Remember that 
+var(β ̂) = s2(X'X)-1 , where s2= Sum(ei2/(n – k)). (Spoiler Alert: You should get 0.20827.) 
+
+*First create the Buns to the Sandwich estimator  (X'X)-1. 2x2:
+matrix Bun = invsym(X' * X)
+matrix list Bun
+```{r}
+Bun <- solve(t(X)%*%X)
+Bun
+```
+then the Meat… ei^2... 10x1
+```{r}
+E_squareds<- cbind(data$r_sqr)
+```
+s^2 
+```{r}
+s_sqr = sum(E_squareds)/(nrow(X)-ncol(X))
+s_sqr
+```
+get variance β ̂= s2(X'X)^-1 . 2x2 
+```{r}
+var_B = s_sqr*Bun
+var_B
+```
+getting standard errors  SE= (var(B^))^1/2
+```{r}
+SE_Bo=sqrt(var_B[1,1])
+SE_B1=sqrt(var_B[2,2])
+SE_Bo
+SE_B1
+```
+
+
+

@@ -1,0 +1,62 @@
+\documentclass[../main.tex]{subfiles}
+
+\doublespacing
+
+\begin{document}
+
+\subsection{Monthly Variation}
+
+By having responses of which months have the respondents experienced food insecurity in the past year, the survey was constructed into panel data form to produce 3,300 observations of the sample population. To identify variation in food insecurity by month I use the following specifications:
+\begin{align}
+\label{eq:food_insecurity_baseline}
+y_{i,m} &= \sum^{12}_{m=2}\delta_{m1}month_m + \epsilon_{i,m} \\
+\label{eq:food_insecurity_fixed_effects}
+y_{i,m} &= \sum^{12}_{m=2}\delta_{m2}month_m + \alpha_{i} + \epsilon_{i,m} \\
+\label{eq:food_insecurity_controls}
+y_{i,m} &= \sum^{12}_{m=2}\delta_{m3}month_m + \beta{X}_{i} + \epsilon_{i,m}
+\end{align}
+(\ref{eq:food_insecurity_baseline}) Baseline estimation of food insecurity in each individual month, y is an indicator variable that is true if an individual reported experiencing food insecurity in the observed month. (\ref{eq:food_insecurity_fixed_effects}) baseline with individual fixed effects. (\ref{eq:food_insecurity_controls}) baseline with demographic controls of age, gender, education level , family size, number of dependents, cooperative membership, and years of coffee producing experience. 
+
+\subsection{Instrumented Difference-In-Differences Approach}
+
+To evaluate the effect of honey production has on food insecurity exposure, I will be focusing on the seasonality effect between honey production and food insecurity. As displayed in Figure \ref{fig:map_chiapas_map}, Coffee occurs in a concentrated period of the year, which creates a link to the honey harvest following immediately afterwards due to abundance of coffee tree flowering that is required for the next coffee harvest cycle to begin. As coffee sales begin to drop, the instance of food insecurity starts to creep up. 	
+
+I will be using an instrumented difference-in-differences estimation approach \parencite{duflo_schooling_2001}, to measure the effect of being a honey producer has on the probability of being food insecure during the honey harvest season. This approach uses a linear probability model, and considering the use of panel data can have correlations with unobservables, I will also use clustered standard errors at the individual level with individual fixed effects on the following specification:
+\begin{equation} 
+\label{eq:DiD}
+y_{i,m} = \alpha_0 + \beta{T}_{i} + \gamma{S}[m \in \{4,5,6\}] + \theta{T}_{i}{S}[m \in \{4,5,6\}] + \tau_{i} + \epsilon_{i,m}
+\end{equation}
+The outcome of interest y is a dummy variable that indicates the presence of food insecurity reported in a given month. T is the treatment dummy variable of being a honey producer or not, while S is a season dummy variable to indicate if a given month observed is between the months of April through June. Lastly the interaction between treatment and season is a dummy variable that is true for observations where the individual is honey producers and in either the months of April, May, or June. This specification will produce the probability of being food insecure for both treatment and control participants during the months of July through March and compare the distance between treatment’s probability of food insecure in the honey harvest season to the expected probability treatment would have if the relationship to control stayed constant. 
+
+\subsection{Instrumental Variable}
+Since the treatment variable of being a honey producer is an element that is determined by the individual, it is possible that the adoption of honey production could be correlated with unobserved characteristics that affect food insecurity and produce bias in the estimation of the honey production’s effect on food insecurity. With this endogeneity concern, an instrumental variable will be included to the previous specification. The instrumented variable is the percentage share of the individual’s neighbors in their community who are honey producers \parencite{sellare_sustainability_2020}. 
+
+\begin{equation}
+\label{eq:IV_honey_share}
+Z_{ir} &= \frac{\sum^{n_r}_{j=1,j\neq{i}}T_{jr}-T_{ir}}{n_{r}-1}
+\end{equation}
+
+This is calculated by taking the total number honey producers in the survey region (11 total regions in study) divided by total number of individuals in the survey region, minus the observed individual. If the observed individual is themselves a honey producer, then the total of honey producers in region will be reduced by 1. I then take the fitted values of T ̂ in the first stage OLS to run the instrumented regression with clustered standard errors and individual fixed effects:
+
+\begin{multline}
+\label{eq:2sls_OLS}
+\textbf{OLS:}\quad y_{i,m} = \alpha_0 + \beta_{OLS}{T}_{i} + \gamma _{OLS}{S}[m \in \{4,5,6\}] \\ + \theta_{OLS}{T}_{i}{S}[m \in \{4,5,6\}] + \tau_{i} + \epsilon_{i,m}    
+\end{multline}
+
+\begin{equation}
+\label{eq:2sls_1st_Stage}
+\textbf{First Stage Fitted Values:}\quad T = \alpha + \beta{Z} + \epsilon \to \hat{T} = \hat{\alpha} + \hat{\beta}Z + \epsilon 
+\end{equation}
+\begin{multline}
+\label{eq:2sls_2nd_Stage}
+\textbf{IV:}\quad y_{i,m} = \alpha_0 + \beta_{IV}\hat{T}_{i} + \gamma_{IV}{S}[m \in \{4,5,6\}] \\ +  \theta_{IV}\hat{T}_{i}{S}[m \in \{4,5,6\}] + \tau_{i} + \epsilon_{i,m}    
+\end{multline}
+
+\subsubsection{Case for Instrumental Variable}
+
+While being a honey producer may be endogenous, however living in a region with honey producers is plausibly exogenous. Tseltal communities are located on communal ejido lands that have been returned to indigenous possession with the passing of the 1917 Mexican Constitution Article 27, which granted residents communal land tenure rights for agricultural purposes in perpetuity \parencite{jones_privatizing_1998}. However, this land was not to be privately owned, and thus the ejido could not be bought, sold, mortgaged, or divided into individual private parcels either. However, in 1992 Article 27 was revised to allow for limited privatization and sale of ejido land, but with the requirement of all ejidatarios (ejido residents) to approve of a sale, sales are rare mobility is severely limited in the Chiapas highlands. Therefore, for most coffee producers in this study, where one currently lives is primarily due to family inheritance and not due to market forces, and as such, an individual cannot control where they live and how many of their neighbors have started beekeeping (Figure \ref{fig:map_ejidos}).
+
+If the percentage of one’s neighbors who are honey producers is exogenous, this supports the relevance condition of this instrument in that to take up beekeeping in these remote regions, one must first learn about this method and borrow a starter beehive from a neighboring honey producer. In these remote ejido lands, cellular communication is sparce, with 2020 census data on villages where study surveys were located, 16\% of residents reported to have access to a cellular phone \parencite{pueblos_america_towns_2020}. Travel to the nearest city was on average 22km, but this is geographic distance and not driving distance, which considering these villages are up along the mountain range, driving can easily exceed 2 hours by automobile. But that estimate is dependent on automobile accessibility, which car ownership is uncommon. Of the 11 survey regions, only 3 have census data reporting any car ownership, with the highest ownership density was 5.26\% of residents of the village San Jose Veracruz had an automobile. Public transportation does not operate in the Chiapas Highlands, and so the primary means of transportation is through a taxi network. As a result, access to information and resources is severely limited. And as such, local communities serve an important role in shared learning and resources. For most current honey producers, they borrowed a beehive and learned how to manage it while they saved up to purchase additional beehives in the future. 
+To satisfy the exclusion restriction requirements, the share of neighboring honey producers only affects food insecurity through the channel of honey production. This requirement could be violated if a characteristic of the instrument affects food insecurity directly, for instance if neighboring honey producers give excess food to non-honey producers during the honey harvest season. Table \ref{summary_region} compares the difference in means between 5 regions with high regional honey producer density, and 6 with low regional density (Figure \ref{fig:honey_counts}). To be categorized as a “honey region” a given survey region must have at least 20\% honey producer representation (Figures \ref{fig:honey_percent} \& \ref{fig:map_honey_regions}). Based on the results found in Table \ref{summary_region}, the regional characteristics between honey regions and non-honey regions do not appear to large enough to demonstrate a material spillover effect where neighboring honey producers are affecting the exposure to food insecurity of their neighbors. Finally, by controlling for the outcomes of being a honey producer, the instrument remains unbiased to treatment effects when evaluating the impact of the honey season.
+
+\end{document}
