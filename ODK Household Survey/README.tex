@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+\title{README: KoboToolbox ODK}
+\author{Grant Xavier Storer}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent This survey was an exit survey following a lab-in-the-field experiment, involving coffee producers located in the mountainous region of Chiapas, Mexico in the summer of 2022. Experiment was conducted using tablets in 11 village centers, with most being \textgreater 2 hour travel up the mountains from the nearest town. Due to the remote locations of these villages, the platform that the experiment was built on needed to be able to operate without internet connection. As a result, we used a platform called KoboToolbox, which runs on the ODK design. \textbf{NOTE:} This survey was written in Spanish.\\
+
+\noindent The Excel file titled "\textbf{participant\_survey.xlsx}" was the program I designed for conducting our survey on \href{https://support.kobotoolbox.org/welcome.html}{\textbf{KoboToolbox}}. Survey is written in the standard XLSForm method: survey, options, settings. Survey is read first sequentially, then horizontally: new row, read type of command ("type"), record action name ("name"), then instruct how it should be displayed ("label"). The columns that follow after display specific actions that influence the label display. For a more in-depth explanation of XLSForm structure, please check out: \href{https://xlsform.org/en/}{\textbf{xlsform.org}}.\\
+
+\noindent To see how the survey was displayed to the enumerator on the tablet, observe the png images in the "\textbf{survey\_display}" folder. These images are actually the desktop preview of the survey and some features are not displayed exactly as it does on the tablet, most notably, the grouping of questions that are displayed on a given page on the tablet. Furthermore, these images are showing one such display of the survey, and some questions may be different or omitted based on the participant's answers. For instance, in "\textbf{survey\_02.png}" there are 2x questions regarding external income with a Y/N options. In this preview, both are selected yes, and so a followup question regarding the quantity of income earned from those respective sources. If the participant had selected "no", then these followup questions would not appear. These commands are being controlled within the "\textbf{participant\_survey.xlsx}" on column D ("relevant") for rows 35 \& 37. It is categorized as a question, but only to include it if it's relevant to the participant, and thus the condition of displaying it if the previous question had "sí" had been selected.  
+
+\end{document}
