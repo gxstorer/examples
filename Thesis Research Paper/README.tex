@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+
+\title{READ ME}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+\item This template is designed to automate outputs as efficiently as possible through the use of macros. Many outputs are intended to follow a consistent design to enhance readibility, but implementing a custom design and maintaining consistency is quite cumbersome. 
+
+\item You can use this template as a generalize template that is used for the entire project, or can be output-specific as well. If the entire project resides in a single do-file, then macros that are output-specific like "title" should be left blank. However, if each output is a separate do-file, then use the template of "Set General Tables Format" should be in the main do-file, to ensure that the aspects of the outputs you want to be consistent in all tables can be modified in a single update, and table-specific commands are in each unique do-file. 
+
+
+\item Each line of code generally falls into 4 columns:
+
+(1) command (2) command code (3) command syntax (4) comments*
+ 
+* Lengthy command codes and syntax are spaced into multiple columns for better visability.
+
+\item Comments will explain what the code does, but also will highlight if there is a manual entry that is needed that are categorized as:
+\begin{itemize}
+\item (Required)  : User must make some kind of action before running do-files
+\item (Manual)   	: During editing phase, editor will have to make a manual change from template before running do-files.
+\item (Optional)    	: User may manually change code syntax if applicable.
+\item (NOTE)        	: Additional information regarding manual changes of given code.
+\end{itemize}
+
+\item Project folders are categorized into two subfolders: \textbf{"data"} and \textbf{"project"}. Data stores folders pertaining to the inputs used in the project, meanwhile the project folder stores various outputs that come from the data.
+
+\begin{itemize} 
+
+\item Data:
+
+\begin{itemize}
+\item \textbf{original\_data}: A folder where any source data that the project is based on is located. Keeping this separate helps ensure the preservation of the original data for reproducability.
+
+\item \textbf{working\_data}: 	A folder where any produced data within the project is located. Merging datasets, converting .CSV files into .DTA files will all be located here and separate from original data.
+
+\item \textbf{code}: DO-files used in project.
+\end{itemize}
+
+\item Project:
+
+\begin{itemize}
+
+\item \textbf{sections}: Each section of a paper falls into 8 distinct sections, and each may require minor formatting changes. This folder stores each of the .tex files and a set of starter templates to allow ease in the process of producing an initial document.
+\item \textbf{tables}: Tables produced in project will be stored as .tex files that all can be found in this one folder. DO-file will use the local macros to direct all tables produced to be stored in this folder.
+
+\item \textbf{figures}: Graphs and images produced in project will be stored in this folder.
+
+\item \textbf{equations}: Equations will be stored in this folder.
+
+\end{itemize}
+
+\end{itemize}
+\item DO-file automates at two levels: global and locals.
+
+\begin{itemize}
+\item \textbf{globals}: Many outputs use the same types of commands, and when going through the editing process, it's cumbersome to get all outputs using a consistent format throughout; some tables may have different decimal placements, or using different LaTeX commands. During the editing phase, modify which commands that are desired to be consistent throughout.
+
+\item \textbf{locals}: Each output is going to have output-specific commands (i.e. title). The local macros section provides a template set of local macros that are to be placed with each exported output. The \textbf{`locals'} macro groups all locals together so that the export command is short and to make troubleshooting more efficient.
+\end{itemize}
+
+\item Check list for running this specific do-file: 
+\begin{itemize}
+
+\item Ensure project folder holds the main folders.
+\begin{itemize}
+\item Grant/Razvan: ensure the local macro "project" matches folder name in shared projects OneDrive folder.
+\item External users: Set path to project as noted in the "\textbf{Set Current Directory}" section of DO-file.
+\end{itemize}
+
+\item Review all "(Optional)" codes and confirm those options.
+\item Packages required: \textbf{ESTOUT} \& \textbf{REGHDFE}
+\begin{itemize}
+\item If not currently downloaded, then manually enter these commands:
+\begin{itemize}
+\item \textbf{ssc install estout}
+\item \textbf{ssc install reghdfe} 
+\end{itemize}
+
+\end{itemize}
+\end{itemize}
+
+
+\end{enumerate}
+
+
+\end{document}

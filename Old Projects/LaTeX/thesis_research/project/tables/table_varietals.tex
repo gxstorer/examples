@@ -1,0 +1,49 @@
+\begin{table}[htbp]\centering \small
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Coffee Varieties: Honey Producers vs. Non-Honey Producers \label{varietals}}
+\begin{tabular}{l*{3}{cccc}}
+\toprule
+                &\multicolumn{2}{c}{(1)}&\multicolumn{2}{c}{(2)}&\multicolumn{2}{c}{(3)}     \\
+                &\multicolumn{2}{c}{\textbf{Honey Producers}}&\multicolumn{2}{c}{\textbf{  Non-Honey  }}&\multicolumn{2}{c}{\textbf{Difference}}\\
+                &     Mean&Std. Dev.&     Mean&Std. Dev.&     Mean         &   T-Stat\\
+\midrule
+\textbf{  Susceptible to CLR:}&         &         &         &         &                  &         \\
+\addlinespace
+Garnica         &     0.83&     0.38&     0.77&     0.42&     0.06         &   (1.09)\\
+\addlinespace
+Bourbon         &     0.35&     0.48&     0.30&     0.46&     0.05         &   (0.73)\\
+\addlinespace
+Caturra         &     0.28&     0.45&     0.22&     0.42&     0.06         &   (0.83)\\
+\addlinespace
+Mundo novo      &     0.09&     0.29&     0.09&     0.29&     0.00         &   (0.05)\\
+\addlinespace
+Typica          &     0.06&     0.23&     0.04&     0.19&     0.02         &   (0.57)\\
+\addlinespace
+Maragogype      &     0.02&     0.14&     0.04&     0.20&    -0.02         &  (-0.97)\\
+\addlinespace
+Pacamara        &     0.02&     0.14&     0.03&     0.18&    -0.01         &  (-0.60)\\
+\addlinespace
+\textbf{  Resistant to CLR:}&         &         &         &         &                  &         \\
+\addlinespace
+Oro azteca      &     0.52&     0.50&     0.39&     0.49&     0.13\sym{*}  &   (1.70)\\
+\addlinespace
+Catimor         &     0.24&     0.43&     0.29&     0.45&    -0.04         &  (-0.67)\\
+\addlinespace
+Geisha          &     0.19&     0.39&     0.11&     0.31&     0.08         &   (1.34)\\
+\addlinespace
+Tabi            &     0.00&     0.00&     0.05&     0.23&    -0.05\sym{***}&  (-3.55)\\
+\addlinespace
+Robusta         &     0.02&     0.14&     0.01&     0.12&     0.00         &   (0.25)\\
+\addlinespace
+\textbf{  Resistant vs. Susceptible:}&         &         &         &         &                  &         \\
+\addlinespace
+Total Resistant Varietals&     0.96&     0.75&     0.85&     0.80&     0.11         &   (0.97)\\
+\addlinespace
+Total Susceptible Varietals&     1.65&     0.97&     1.49&     0.96&     0.16         &   (1.08)\\
+\addlinespace
+Resistant Coffee (pct)&     0.37&     0.30&     0.33&     0.31&     0.04         &   (0.82)\\
+\midrule
+Observations    &       54&         &      221&         &      275         &         \\
+\bottomrule
+\end{tabular}
+\end{table}

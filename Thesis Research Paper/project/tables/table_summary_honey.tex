@@ -1,0 +1,47 @@
+\begin{table}[htbp]\centering \small
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Summary Statistics: Honey Producers vs. Non-Honey \label{table_summary_honey}}
+\begin{tabular}{l*{3}{cccc}}
+\toprule
+                &\multicolumn{2}{c}{(1)}&\multicolumn{2}{c}{(2)}&\multicolumn{2}{c}{(3)}     \\
+                &\multicolumn{2}{c}{\textbf{Honey Producers}}&\multicolumn{2}{c}{\textbf{  Non-Honey  }}&\multicolumn{2}{c}{\textbf{Difference}}\\
+                &     Mean&Std. Dev.&     Mean&Std. Dev.&     Mean         &   T-Stat\\
+\midrule
+\textbf{Demographics:}&         &         &         &         &                  &         \\
+\addlinespace
+Age             &    43.39&    15.31&    43.43&    15.77&    -0.05         &  (-0.02)\\
+\addlinespace
+Gender (1 = Female)&     0.43&     0.50&     0.52&     0.50&    -0.09         &  (-1.19)\\
+\addlinespace
+Completed Only Middle School (pct)&    12.96&    33.90&    14.48&    35.27&    -1.52         &  (-0.29)\\
+\addlinespace
+Completed High School (pct)&     9.26&    29.26&    10.86&    31.18&    -1.60         &  (-0.36)\\
+\addlinespace
+Household Size  &     7.63&     3.82&     6.62&     2.91&     1.01\sym{*}  &   (1.82)\\
+\addlinespace
+Number of Dependents&     2.85&     3.18&     2.23&     2.23&     0.63         &   (1.37)\\
+\addlinespace
+Regional Elevation (MASL)&  1126.50&   267.19&  1069.17&   267.35&    57.33         &   (1.41)\\
+\addlinespace
+Distance to Nearest Town (km)*&    15.08&    12.20&    20.79&    15.48&    -5.71\sym{***}&  (-2.91)\\
+\addlinespace
+Coffee Experience (Yrs)&    18.85&    15.17&    16.96&    12.92&     1.89         &   (0.84)\\
+\addlinespace
+Farm size (ha)  &     3.76&     2.44&     3.62&     3.63&     0.14         &   (0.34)\\
+\addlinespace
+\textbf{Outcome Variables:}&         &         &         &         &                  &         \\
+\addlinespace
+Coffee Harvest (1 Quintal = 60kg)&     7.03&     7.83&     5.98&     5.15&     1.05         &   (0.94)\\
+\addlinespace
+Income (1,000 MXN)\ddag&    17.91&    15.33&    16.81&    15.35&     1.10         &   (0.47)\\
+\addlinespace
+Food Insecure (months)&     1.67&     1.35&     1.85&     1.26&    -0.18         &  (-0.89)\\
+\midrule
+Participants    &       54&         &      221&         &      275         &         \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize *Distance to nearest town reports distance from regional center where surveys were conducted to}\\
+\multicolumn{7}{l}{\footnotesize the nearest county (municipality) seat.}\\
+\multicolumn{7}{l}{\footnotesize \ddag Income is the reported total of coffee sales, off-farm income, and government subsidies,}\\
+\multicolumn{7}{l}{\footnotesize excluding income from honey sales.}\\
+\end{tabular}
+\end{table}

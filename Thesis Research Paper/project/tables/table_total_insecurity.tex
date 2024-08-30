@@ -1,0 +1,28 @@
+\begin{table}[htbp]\centering \small
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Effect of Honey Production on Total Months of Food Insecurity \label{table_total_insecurity}}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\ \addlinespace
+                    &\multicolumn{1}{c}{\shortstack{\textbf{OLS}\\ \\ \textbf{Baseline}}}&\multicolumn{1}{c}{\shortstack{\underline{OLS}\\ \\ \textbf{Regional Controls}}}&\multicolumn{1}{c}{\shortstack{\underline{OLS}\\ \\ \textbf{All Controls}}}&\multicolumn{1}{c}{\shortstack{\underline{IV}\\ \\ \textbf{All Controls}}}\\
+                    &Food Insecurity\textsuperscript{1}         &Food Insecurity\textsuperscript{1}         &Food Insecurity\textsuperscript{1}         &Food Insecurity\textsuperscript{1}         \\
+\midrule
+Honey Producer      &       -0.18         &       -0.04         &        0.02         &       -0.03         \\
+                    &      (0.20)         &      (0.26)         &      (0.26)         &      (0.25)         \\
+\addlinespace
+Constant            &        1.85\sym{***}&        1.62\sym{***}&        0.92\sym{*}  &        0.92\sym{*}  \\
+                    &      (0.08)         &      (0.31)         &      (0.54)         &      (0.52)         \\
+\midrule
+Observations        &         275         &         275         &         275         &         275         \\
+\(R^{2}\)           &       0.003         &       0.066         &       0.105         &       0.105         \\
+\hline Regional Controls&          NO         &          NO         &         YES         &         YES         \\
+Demographic Controls\textsuperscript{2}&          NO         &         YES         &         YES         &         YES         \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Robust standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \textbf{1.} Dependent variable is the total number of months that producers reported experiencing food insecurity in}\\
+\multicolumn{5}{l}{\footnotesize the past 12 months.}\\
+\multicolumn{5}{l}{\footnotesize \textbf{2.} Demographic Controls: Age, Gender, Education Level, Household Size, Dependents, Coffee Experience,}\\
+\multicolumn{5}{l}{\footnotesize Farm Size, Coffee Harvest, Income.}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<.10\), \sym{**} \(p<.05\), \sym{***} \(p<.01\)}\\
+\end{tabular}
+\end{table}

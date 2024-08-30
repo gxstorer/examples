@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% double space this, since it is a working paper
+\usepackage{setspace}
+
+\usepackage[backend=biber,style=apa,sorting=nyt]{biblatex}
+
+\usepackage[letterpaper]{geometry}
+
+\usepackage{amsmath}
+\usepackage{lscape}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xr}
+
+\addbibresource{project/honey_paper_references.bib}
+
+\usepackage{subfiles}
+
+\begin{document}
+
+\subfile{project/sections/0_title_page}
+
+\doublespacing
+
+
+\section{Introduction}
+%\externaldocument{project/sections/1_introduction}
+\subfile{project/sections/1_introduction}
+
+\section{Context and Data}
+%\externaldocument{2_context_data}
+\subfile{project/sections/2_context_data}
+
+
+\section{Empirical Strategy}
+%\externaldocument{3_empirical}
+\subfile{project/sections/3_empirical}
+
+\section{Results}
+%\externaldocument{4_results}
+\subfile{project/sections/4_results}
+
+\section{Conclusion}
+%\externaldocument{5_conclusion}
+\subfile{project/sections/5_conclusion}
+
+\printbibliography
+
+\section{Tables and Figures}
+%\externaldocument{6_appendix}
+\subfile{project/sections/6_appendix}
+\end{document}

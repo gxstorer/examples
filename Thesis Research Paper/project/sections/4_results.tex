@@ -1,0 +1,64 @@
+\documentclass[../main.tex]{subfiles}
+
+\doublespacing
+
+\begin{document}
+
+\subsection{Overall Effect of Honey Production}
+Table \ref{table_total_insecurity} presents results from specifications 
+\ref{eq:producer_baseline}, \ref{eq:producer_regional_controls}, and \ref{eq:producer_all_controls},
+which estimate the effect of honey production on overall food insecurity as measured by the number of months in the past year that a producer reports food insecurity. In the baseline
+specification, honey producers experience -0.18 months (5 days) less food insecurity. Adding first regional and then demographic controls reduces this difference to nearly zero.
+These results differ from those of \textcite{baconExplainingHungryFarmer2014} and
+\textcite{anderzenEffectsOnfarmDiversification2020},
+both of whom find overall differences in the duration of the hungry season depending on whether coffee farmers diversify. The results here
+suggest that honey production is one of several diversification
+strategies for these farmers.
+
+\subsection{Temporal Variation in Food Insecurity}
+Table \ref{table_month_insecurity} presents results from specifications
+\ref{eq:food_insecurity_baseline}, \ref{eq:food_insecurity_controls},
+and \ref{eq:food_insecurity_fixed_effects} which estimate the monthly variation in reported food insecurity. Here we find similar point estimates to Figure \ref{fig:graph_food_insecurity_exposure}, but as  these estimates use the entire 3300 month-producer panel, the resulting estimates have much smaller standard errors. The month dummies for April through December are significant either at the 5\% or the 1\% level.
+Columns (2) and (3) show that the point estimates and significance levels are robust to the inclusion of regional controls and either participant fixed effects or demographic controls, corroborating the qualitative evidence of a hungry season or ``thin months'' provided by \textcite{morrisMesesFlacosSeasonal2013}, 
+\textcite{gerliczUsePerceptionsAlternative2019}, \textcite{anderzenEffectsOnfarmDiversification2020}. 
+
+\subsection{Effect of Honey Production in Honey Months}
+Table \ref{table_seasonal_effect} presents results from specifications
+\ref{eq:did_baseline}, \ref{eq:did_controls}, and \ref{eq:did_fixed_effects}.
+All of these specifications estimate the effect of being a honey producer in  the honey season: April, May, or June. Here we find an overall increase of food insecurity by 9\% in these months. Honey producers, however, experience a decrease of 7\% in food insecurity these months. These estimates are noisy, and hover just above the   10\% threshold for statistical significance, indicating that while honey producers are on average able to mostly reverse the marginal food insecurity effects of these months there is ample variation in individual producers' ability to do so. 
+These results are robust to the inclusion of regional controls
+and either household fixed effects or demographic controls.
+
+\subsection{Instrumental Variable Results}
+In this section we present the results from estimating
+specifications \ref{eq:producer_all_controls} and
+\ref{eq:did_fixed_effects} with two-stage least squares (2SLS), instrumenting honey producer status with the share of honey producers in the same region.  Table \ref{eq:IV_honey_share} shows the results of the first stage. An increase of 10\%
+in the number of honey producers in a producer's region is associated with a 9\% increase in the probability that a producer will produce honey. The F-statistic is 89.5, safely exceeding the typical threshold for a valid instrument. 
+
+Next we turn to column 4 of Table \ref{table_total_insecurity},
+which presents the effect of honey production on overall
+food insecurity. Estimating the effect of honey production
+with 2SLS does not change the point estimate, which is still very close to zero. 
+
+Third, we turn to column 4 of Table \ref{table_seasonal_effect}. Here estimating the effect of honey production by 2SLS more than
+doubles the point estimate from 7\% to 19\% reduction in food 
+insecurity. We interpret this effect as follows.
+An increase in 10\% of the number of honey producers in a region
+decreases food insecurity for the average producer
+by 1.9\% in the honey months (April, May, and June) through
+the channel of the adoption of honey production. This result
+is significant at the 5\% level. 
+
+\subsection{Robustness Check}
+Finally, as a robustness check, we estimate the effect of honey production on food insecurity using an indicator variable for lean months (June, July, and August) instead. If we do not find an association between honey production and food
+insecurity in these months, then the lack of an association lends credence to our  results showing a direct effect of honey production on food security during honey months. If we do find an association, then there could be systematic differences between honey producers and non-producers not captured by our econometric approach.
+Alternately, there could be differential dynamics between honey producers and non-honey producers, due to, e.g., differential consumption smoothing using honey earnings.
+
+Table \ref{table_robustness_lean} presents the results. The first three columns estimate specifications \ref{eq:did_baseline}, \ref{eq:did_controls}, and \ref{eq:did_fixed_effects}
+with OLS and the fourth column estimates specification \ref{eq:did_fixed_effects} with 2SLS.  In all four specifications, households experience 35\% higher mean food insecurity during the lean months, with  honey producers not differing in overall reported food insecurity risk in specifications 1 and 2 where the exclusion  of producer fixed effects allows us to identify average differences. OLS estimates in columns 1-3 show no effect systematic difference in food security among honey producers during the lean season, while IV results show an insignificant  point estimate of -0.08. This result could indicate an effect that some of the benefits of honey production may last beyond the honey season for some producers.
+Overall, the results of the robustness check support our main finding: the
+association between honey production and food insecurity during the
+honey months. 
+
+
+\end{document}

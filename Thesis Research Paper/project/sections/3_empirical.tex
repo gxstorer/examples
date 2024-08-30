@@ -1,0 +1,128 @@
+\documentclass[../main.tex]{subfiles}
+
+\doublespacing
+
+\begin{document}
+
+In this section we present our empirical strategy. First, we test
+for the effect of honey production on total months of food insecurity at the producer level. Next, we use a producer-month panel to examine the temporal dimension of food insecurity, examining month-to-month variation in food insecurity.
+Third, we test for the effect of honey production during the honey season on food insecurity. All nine of these first specifications are estimated with ordinary least squares regression. 
+Lastly, we attempt to correct for any potential endogeneity between food insecurity and honey production by using the share of
+honey producers in the region as an instrument for honey producer
+status. 
+
+\subsection{Effect of Honey Production on Overall Food Insecurity}
+We begin by estimating the following specifications at the producer
+level. 
+
+\begin{align}
+\label{eq:producer_baseline}
+y_i &= \alpha_{1} + \beta_{1} T_i + e_{1i,r} \\
+\label{eq:producer_regional_controls}
+y_{i,r} &= \alpha_{2} + \beta_{2} T_i + p_r + e_{2i,r} \\
+\label{eq:producer_all_controls}
+y_{i,r} &= \alpha_{3} + \beta_{3} T_i + \gamma_{3i} X_i + p_r + e_{3i,r} 
+\end{align}
+
+The dependent variable $y_i$ is the total months of food insecurity for producer $i$ in region $r$. $T_i$ is an indicator
+variable capturing whether the producer is a honey producer. 
+The vector $p_r$ is a set of regional dummies, and $X_i$ is a set of demographic controls, namely: age, gender, education, household size, number of dependents, coffee experience, farm size, coffee harvest, and income. Standard errors are calculated using the  Huber-Eicker-White heteroskedasticity-robust estimator  \parencite{whiteHeteroskedasticityConsistentCovarianceMatrix1980}. We test the null hypothesises of whether $\beta_1 = 0$, $\beta_2 = 0$, or $\beta_3 = 0$: whether
+honey producer status is associated with the number of months of food insecurity.
+
+\subsection{Monthly Variation in Food Insecurity}
+Next we take advantage of the panel structure of our data set and estimate the following specifications to determine monthly variation in food insecurity. The results here will add precision to the descriptive statistics of
+Figure \ref{fig:graph_food_insecurity_exposure}, which presents
+conditional means of food insecurity computed separately by month. The specifications below jointly estimate the monthly effects leveraging the entire panel to yield greater precision. 
+
+\begin{align}
+\label{eq:food_insecurity_baseline}
+y_{i,m} &= \alpha_4 + \sum^{12}_{m=2}\delta_{m1}month_m + \epsilon_{4i,m} \\
+\label{eq:food_insecurity_controls}
+y_{i,r,m} &= \alpha_5 + \sum^{12}_{m=2}\delta_{m2}month_m + \gamma_5 {X}_{i} + p_r + \epsilon_{5i,r,m} \\
+\label{eq:food_insecurity_fixed_effects}
+y_{i,r,m} &= \alpha_6 + \sum^{12}_{m=2}\delta_{m3}month_m + \tau_{i} + p_r + \epsilon_{6i,r,m} 
+\end{align}
+
+In all three specifications, the $\delta_m$ coefficients capture changes in reported food insecurity by month compared to January, the reference month. Specification \eqref{eq:food_insecurity_controls} adds demographic controls. Specification \eqref{eq:food_insecurity_fixed_effects} adds 
+participant-level fixed effects $\tau_i$.  
+Both of these specifications also add regional dummies $p_r$. Here we account for presumably high intra-individual correlation in food insecurity by clustering standard errors at the level of the respondent. 
+We test the null hypotheses of $\delta_{m} = 0$ for $1 \le m \le 12$:
+whether a particular month is associated with the presence of food insecurity. 
+
+\subsection{Effect of Honey Production on Food Insecurity in Honey Months}
+Next, we estimate the effect of honey production on food insecurity
+during the specific months in which honey producers receive income from honey sales: April, May, and June, as described in  
+Section \ref{food_insecurity}.  We construct an indicator variable $I[m \in \{4,5,6\}]$ which takes on 1 for a honey month and 0 otherwise. We interact this variable with $T_i$, a dummy variable which takes on 1 if a producer
+is a honey producer and 0 otherwise. The coefficient $\theta$ of 
+the interaction term thus captures the association between food insecurity and honey producer status in a honey month. We 
+Here we again cluster standard errors by producer. We test the null
+hypothesis of $\theta = 0$.
+
+We incorporate this interaction term in three different specifications below:
+a baseline specification \ref{eq:did_baseline} with dummies for honey season and honey producer,
+a specification \ref{eq:did_controls} that incorporates the same
+regional and demographic controls as above,
+and a specification \ref{eq:did_fixed_effects} that includes participant fixed effects. 
+Specification \ref{eq:did_fixed_effects} does not include 
+honey producer status $T_i$ because
+it is absorbed into the participant-level fixed effect. 
+
+\begin{align}
+\label{eq:did_baseline}
+y_{i,m} &= \alpha_7 + \beta_7 {T}_{i} + \gamma_7{I}[m \in \{4,5,6\}] + \theta_7{T}_{i}{I}[m \in \{4,5,6\}] + \epsilon_{7i,m} \\
+\label{eq:did_controls}
+y_{i,r,m} &= \alpha_8 + \beta_8 {T}_{i} + \gamma_8{I}[m \in \{4,5,6\}] + \theta_8{T}_{i}{I}[m \in \{4,5,6\}] + \delta_8 X_i + p_r + \tau_{i} + \epsilon_{8i,r,m} \\
+\label{eq:did_fixed_effects}
+y_{i,r,m} &= \alpha_9 + \gamma_9{I}[m \in \{4,5,6\}] + \theta_9{T}_{i}{I}[m \in \{4,5,6\}] + p_r + \tau_{i} + \epsilon_{9i,r,m} 
+\end{align}
+
+\subsection{Instrumental Variable}
+The directly estimated association between honey production on overall food insecurity and on food insecurity during the honey season could be biased because honey production is a choice variable, and thus could be correlated with unobserved producer-level characteristics
+that also affect food insecurity. For this reason, in this section
+we describe an instrument for a producer's decision to adopt
+honey production: the share of honey producers in the same region.
+
+The instrument is based on similar instruments that are
+used for the adoption of certification schemes as in
+\textcite{sellareSustainabilityStandardsBenefit2020}. 
+This logic of the instrument is based on the technology adoption and social learning literature outlined in section \ref{social_learning}. Each additional honey producer in the region drives down the cost of adopting honey production, both in expected amount of labor and initial capital investment. 
+
+\begin{equation}
+\label{eq:IV_honey_share}
+Z_{ir} = \frac{\sum^{n_r}_{j=1,j\neq{i}}T_{jr}}{n_{r}-1}
+\end{equation}
+
+Here we describe how the instrument is calculated for honey producer
+$i$ in region $r$. The subscript $r \in \{1,\cdots,11\}$ indexes the region. A region $r$ has a total of $n_r$ producers. Recall that the dummy $T_{jr}$ is 1 if producer $j$ in region $r$ is a honey producer and 0 if not. The numerator sums the number
+of producers in region $r$ other than producer $i$ who
+are honey producers. Then we divide by the number of producers in the region, excluding producer $i$. 
+
+Once we calculate $Z_{ir}$ for each producer,  we then estimate the following first stage regression on honey producer status and compute fitted values $\hat{T_i}$.
+\begin{align}
+T_{ir} = \alpha_{10} + \omega_{10}Z_{ir} + \epsilon_{10ir}.
+\end{align}
+
+We then estimate specifications \ref{eq:producer_all_controls} and
+\ref{eq:did_fixed_effects} using these fitted values.
+\begin{align}
+y_{i,r} &= \alpha_{11} + \beta_{11} \widehat{T_{ir}} + \gamma_{11} X_i + p_r + e_{11i,r} \\
+y_{i,r,m} &= \alpha_{12} + \gamma_{12}{I}[m \in \{4,5,6\}] + \theta_{12}\widehat{T_{ir}}{I}[m \in \{4,5,6\}] + p_r + \tau_{i} + \epsilon_{12i,r,m} 
+\end{align}
+
+Whether our instrument provides plausibly unbiased estimates rests on the validity of the relevance condition and the plausibility of the exclusion restriction. The estimation results for equation \ref{eq:IV_honey_share} that we present in table \ref{table_IV} show that the relevance condition holds with an F-statistic of 89.5, as one would expect given the strong spatial correlation in honey production. 
+
+The exclusion restriction meanwhile requires that the instrument used here, namely the share of honey producers in the producer's region, only affect food insecurity through the channel of the producer's own honey production. There is of course at least one additional possible channel. Recall that we classify some regions
+as honey regions because of the number of honey producers is greater than 20\% of the total  number of participants in these regions. These regions could be systematically different from non-honey regions in at least two other ways. 
+\begin{enumerate}
+    \item The coffee parcels in these regions could have higher yields because of the spillover effects of honey production, i.e., bees from honey producers could pollinate the neighboring coffee fields of non-honey producers. Thus the producers in these regions would receive more income from coffee sales than in the non-honey regions due to pollinator-driven increases in production.  
+    \item Honey producers could differ in other ways, such as being more skilled farmers who are more likely to try their hand at producing various agricultural products, receiving additional income from other sources. If so, and given the highly communitarian nature of the Tseltal communities, it might be plausible for them to share food with non-producers during difficult times. 
+\end{enumerate}
+In both of these cases, there would be surplus food in the region that would reduce food insecurity for all of the producers there. We examine Table \ref{table_summary_regional} to see if this is the case. The table shows that producers in honey regions
+on average harvest one more quintal  (60kg) compared to 5.76 quintales in non-honey regions. Moreover, they report receiving 1500 MXN more income compared to 16200 MXN in the non-honey regions. Neither one of these differences, however,
+is significant at the 10\% level because of large standard deviations, as the
+table illustrates.
+Moreover, the difference between average length of food insecurity
+spell in a honey region and a non-honey region is only 0.1 months (3 days), suggesting that if the honey regions are wealthier, the additional income is not going toward food, or least not enough food to meaningfully mitigate food insecurity. 
+Thus we argue that these two other channels are not operative in this case and that the exclusion restriction likely holds.
+
+\end{document}

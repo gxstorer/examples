@@ -1,0 +1,39 @@
+\begin{table}[htbp]\centering \small
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Robustness Check: Lean Season as Treatment Period \label{table_robustness_lean}}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\ \addlinespace
+                    &\multicolumn{1}{c}{\shortstack{\underline{OLS}\\ \\ \textbf{Baseline}}}&\multicolumn{1}{c}{\shortstack{\underline{OLS}\\ \\ \textbf{All Controls}}}&\multicolumn{1}{c}{\shortstack{\underline{OLS}\\ \\ \textbf{Participant FE}}}&\multicolumn{1}{c}{\shortstack{\underline{IV}\\ \\ \textbf{Participant FE}}}\\
+                    &Food Insecurity\textsuperscript{1}         &Food Insecurity\textsuperscript{1}         &Food Insecurity\textsuperscript{1}         &Food Insecurity\textsuperscript{1}         \\
+\midrule
+Honey Producer x Lean Season\textsuperscript{2}&       -0.01         &       -0.01         &       -0.01         &       -0.08         \\
+                    &      (0.05)         &      (0.05)         &      (0.05)         &      (0.12)         \\
+\addlinespace
+Lean Season\textsuperscript{2}&        0.35\sym{***}&        0.35\sym{***}&        0.35\sym{***}&        0.36\sym{***}\\
+                    &      (0.03)         &      (0.03)         &      (0.03)         &      (0.03)         \\
+\addlinespace
+Honey Producer      &       -0.01         &         0.00         &        Absorbed\textsuperscript{3}         &        Absorbed\textsuperscript{3}         \\
+                    &      (0.01)         &      (0.02)         &                   &                    \\
+\addlinespace
+Constant            &        0.07\sym{***}&       -0.01         &        0.06\sym{***}&        0.06\sym{***}\\
+                    &      (0.01)         &      (0.04)         &      (0.01)         &      (0.01)         \\
+\midrule
+\(R^{2}\)           &       0.176         &       0.185         &       0.263         &                     \\
+Observations        &       3,300         &       3,300         &       3,300         &       3,300         \\
+Participants        &         275         &         275         &         275         &         275         \\
+Months              &          12         &          12         &          12         &          12         \\
+\hline Participant Fixed Effects&          NO         &          NO         &         YES         &         YES         \\
+Regional Controls   &          NO         &         YES         &         YES         &         YES         \\
+Demographic Controls\textsuperscript{4}&          NO         &         YES         &          NO         &          NO         \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Clustered\textsuperscript{5} standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \textbf{1.} Dependent variable is a dummy which equals 1 if the producer reports food insecurity in a given month, 0 otherwise.}\\
+\multicolumn{5}{l}{\footnotesize \textbf{2.} Lean Season is a dummy which equals 1 if the observed month is between June-August, 0 for all other months.}\\
+\multicolumn{5}{l}{\footnotesize \textbf{3.} Honey producer status is a participant level characteristic, therefore it is absorbed into the participant fixed effects.}\\
+\multicolumn{5}{l}{\footnotesize \textbf{4.} Demographic Controls: Age, Gender, Education Level, Household Size, Dependents, Coffee Experience, Farm Size,}\\
+\multicolumn{5}{l}{\footnotesize Coffee Harvest, Income.}\\
+\multicolumn{5}{l}{\footnotesize \textbf{5.} Clustered\textsuperscript{5} standard errors are clustered at the participant level.}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<.10\), \sym{**} \(p<.05\), \sym{***} \(p<.01\)}\\
+\end{tabular}
+\end{table}

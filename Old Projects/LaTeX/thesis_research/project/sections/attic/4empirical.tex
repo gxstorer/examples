@@ -1,0 +1,164 @@
+\documentclass[../main.tex]{subfiles}
+
+\doublespacing
+
+\begin{document}
+
+\subsection{Estimation Strategy}
+In order to evaluate the effect of honey
+production on food insecurity, we estimate
+the following regressions. In all of the regressions, 
+the outcome of interest is a dummy variable $y_{i,m}$ that indicates
+the presence of reported food insecurity in a given month.
+We choose a linear probability model for the ease of interpretation
+of the coefficients and because of the instrumental variable estimation
+strategy we will propose in the section.
+
+Equation \ref{eq:month} estimates
+the baseline monthly variation in the outcome of interest,
+Equation \ref{eq:month_fe} incorporates
+individual fixed effects and equation \ref{eq:month_sd} incorporates
+a vector of demographic characteristics (gender, age, and education level).
+
+We are interested in any differences between cooperative members and non-members.
+Because cooperative membership is a choice variable and potentially correlated
+with observable demographic characteristics and unobservables, we estimate
+equation \ref{eq:month_sd} on subgroups of members and non-members separately.
+In all cases, estimates of $\delta_m$ capture monthly differences in the
+probability of being food insecure.
+\begin{align}
+\label{eq:month}
+ y_{i,m} &= \sum_{m=2}^{12} \delta_{m1} \text{month}_{m} + \epsilon_{i,m}  \\
+ \label{eq:month_fe}
+ y_{i,m} &= \sum_{m=2}^{12} \delta_{m2} \text{month}_{m} + \alpha_i + \epsilon_{i,m}  \\
+  \label{eq:month_sd}
+ y_{i,m} &= \sum_{m=2}^{12} \delta_{m3} \text{month}_{m} + \beta X_i +\epsilon_{i,m}  
+\end{align}
+Next, we estimate a second set of the same equations,
+Equations \ref{eq:month_t}, \ref{eq:month_fe_t}, \ref{eq:month_sd_t}, 
+that incorporate a dummy variable
+that indicates if the participant is a honey producer. Estimates of 
+$\gamma^m$ capture the difference in the probability of food insecurity in a given month between honey producers and non-producers.
+\begin{align}
+\label{eq:month_t}
+ y_{i,m} &= \sum_{m=2}^{12} \gamma_{m1}^{\text{ols}} T_i \text{month}_{m} + 
+ \sum_{m=2}^{12} \delta_{n1} \text{month}_{m} + \theta_1 T_i 
+ + \epsilon_{i,m}  \\
+ \label{eq:month_fe_t}
+ y_{i,m} &= \sum_{m=2}^{12} \gamma_{m2}^{\text{ols}} T_i \text{month}_{m} + 
+ \sum_{m=2}^{12} \delta_{n2} \text{month}_{m} + \alpha_i + \theta_2 T_i + \epsilon_{i,m}  \\
+  \label{eq:month_sd_t}
+ y_{i,m} &= \sum_{m=2}^{12} \gamma_{m3}^{\text{ols}} T_i \text{month}_{m} + 
+ \sum_{m=2}^{12} \delta_{n3} \text{month}_{m} + \beta X_i + \theta_3 T_i +\epsilon_{i,m}  
+\end{align}
+Because we are using panel data, we cluster standard errors at the individual level
+to account for possible correlation among unobservables of the same
+individual across months.
+
+\begin{align}
+    y_{i,m} &= \phi_{\text{ols}} I[m \in \{4,5,6\}] + \beta_{\text{ols}} T_i + \theta_{\text{ols}} T_i I[m \in \{4,5,6\}] + \epsilon_{i,t}
+\end{align}
+
+\subsection{Identification Strategy}
+As participants decide whether they will produce honey,
+their honey producer status $T_i$ could be correlated
+with other unobserved characteristics and thus bias our estimates of 
+$\gamma^m$ (the effect of honey production on food insecurity
+in month $m$) in Equations
+\eqref{eq:month_t}, \eqref{eq:month_fe_t}, and \eqref{eq:month_sd_t}.
+For example, participants of above-average farming ability 
+could select into honey production and independently experience
+levels of food insecurity, both because of natural ability.
+
+For this reason, we use an instrumental variables approach (IV) to
+control for this endogeneity. Following \textcite{sellare_sustainability_2020},
+we construct the share of participants in the same region 
+that have adopted honey production, excluding participants themselves.
+\begin{align}
+\label{eq:instrument}
+    \hat{T_i} &= n^{-1} \sum_{j=1, j \ne i}^n T_j 
+\end{align}
+
+Next we estimate the following versions of Equations \eqref{eq:month_t}, \eqref{eq:month_fe_t}, and \eqref{eq:month_sd_t} using $\hat{T_i}$ as an
+instrument for $T_i$.
+\begin{align} 
+\label{eq:month_t_iv}
+ y_{i,m} &= \sum_{m=2}^{12} \gamma_{m1}^{\text{iv}} \hat{T_i} \text{month}_{m} + 
+ \sum_{m=1}^{12} \delta_{n1} \text{month}_{m} + \theta_4 \hat{T_i}
+ + \epsilon_{i,m}  \\
+ \label{eq:month_fe_t_iv}
+ y_{i,m} &= \sum_{m=2}^{12} \gamma_{m2}^{\text{iv}} \hat{T_i} \text{month}_{m} + 
+ \sum_{m=1}^{12} \delta_{n2} \text{month}_{m} + \alpha_i + \theta_5 \hat{T_i} + \epsilon_{i,m}  \\
+  \label{eq:month_sd_t_iv}
+y_{i,m} &= \sum_{m=2}^{12} \gamma_{m3}^{\text{iv}} \hat{T_i} \text{month}_{m} + 
+ \sum_{m=1}^{12} \delta_{n3} \text{month}_{m} + \beta X_i + \theta_6 \hat{T_i} +\epsilon_{i,m}      
+\end{align}
+
+The credibility of our instrument depends on whether it satisfies the
+relevance condition and the exclusion restriction. First we discuss
+the relevance condition. As mentioned previously,
+indigenous farmers in this reason who begin producing honey rely
+on loans of equipment from their neighbors. Thus it makes sense
+that the share of honey producers in the same region would be correlated
+with an individual's honey production status. Table ? shows results
+of estimating Equation \eqref{eq:instrument}.
+
+Next, we discuss the exclusion restriction. According to the exclusion
+restriction, the instrument only affects the outcome variable via the treatment.
+In other words, the share of one's neighbors who are honey producers
+only affects food insecurity through one's own honey production. A potential
+objection to the exclusion restriction is as follows. One's neighbors could
+have extra food by virtue of their own honey production. They could share
+food with a given individual and thus alleviate his or her food insecurity by
+a channel that is not the individual's own honey production. 
+
+We control
+for this possible alternate channel in two ways. 
+First, we estimate modified versions of equations
+\eqref{eq:month_t_iv}
+\eqref{eq:month_fe_t_iv}, and \eqref{eq:month_sd_t_iv}, and
+above with regional fixed effects. The regional
+fixed effects difference out excess food in a region and 
+potentially control for
+this potential violation of the exclusion restriction. Second,
+we use the falsfication test proposed by \textcite{di_falco_does_2011}.
+If the share of adopting neighbors above is a valid instrument, it will affect 
+an individual's technology
+adoption decision but will not affect the outcome variable
+(monthly food insecurity) for the participants who do not adopt the technology. 
+
+Tables ? and ? show that our instrument passes both of these
+tests and therefore that it is a valid instrument.
+
+\begin{table}[p]
+    \centering
+    \caption{Monthly Variation in Food Insecurity}
+    \include{tables/table1}
+    \label{tab:table1}
+\end{table}
+
+\begin{landscape}
+\begin{table}[p]
+    \centering
+    \caption{Honey Production and Monthly Variation in Food Insecurity}
+    \include{tables/table2}
+    \label{tab:table2}
+\end{table}
+\end{landscape}
+
+\begin{table}[p]
+    \centering
+    \caption{Honey Production and Monthly Variation in Food Insecurity}
+    \include{tables/table3}
+    \label{tab:table3}
+\end{table}
+
+
+\begin{table}[p]
+    \centering
+    \caption{Honey Production and Monthly Variation in Food Insecurity}
+    \include{tables/table4}
+    \label{tab:table4}
+\end{table}
+
+\end{document}

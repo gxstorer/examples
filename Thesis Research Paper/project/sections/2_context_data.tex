@@ -1,0 +1,130 @@
+\documentclass[../main.tex]{subfiles}
+
+\doublespacing
+
+\begin{document}
+
+\subsection{Sampling Area}
+This study is based on surveys conducted on 275 coffee producers in the months of June,
+July, and August 2022 in the central highland region of the Mexican state of Chiapas.
+This region is home to the Tseltal Mayan indigenous community, 
+where most households are involved in agricultural production and 
+the primary source of cash income is coffee production. 
+We partnered with the staff of a coffee cooperative 
+that serves in this region for logistical support, and to ensure that we had both buy-in and an understanding of any potential harms to the community.
+
+Figure \ref{fig:map_chiapas_map} shows the location of our study within the central highlands of Chiapas, Mexico, and Figure \ref{fig:map_survey_regions} shows this area in more detail, including the county (municipality) seat of the four nearest larger municipalities. The coffee cooperative Yomol A'tel divides the area into eleven regions, shown with polygons, which we visited over the course of eleven field visits, which corresponded approximately, but not exactly, to each region.  Field visits were announced in advance and were open to anyone who wanted to participate, with  participants compensated with vouchers for dry goods redeemable on-site. Because of the limited amount of dry goods we could transport with us, we restricted participation to one member per household. Overall, 54 of the 275 participants reported producing honey. 
+Our sample is slightly larger than that of \textcite{anderzenEffectsOnfarmDiversification2020}, who reports 36 honey producers among 176 overall coffee producers, and substantially larger than the sample of 15 producers interviewed by \textcite{gerliczUsePerceptionsAlternative2019} and the sample of 29 producers interviewed by \textcite{morrisMesesFlacosSeasonal2013}.
+
+Our household survey asked about household demographics, 
+income and food insecurity, farm characteristics, 
+coffee production, and honey production. 
+In Table \ref{table_summary_honey},
+we present summary statistics of demographic 
+characteristics separately for 
+honey producers and non-producers and test for statistically
+significant differences between those
+demographic characteristics by honey producer status. Honey producers and non-producers do not appear to differ meaningfully
+by age, gender, or education level. Honey producers do have slightly larger households (1 more member) and tended to live closer to the nearest county seat (by an average of 6 km).
+They have similar experience with coffee growing, the primary
+economic activity of the region: neither the number of years
+growing coffee, the size of the farm, the size of the 
+harvest, nor total income are significantly different between honey producers and non-producers. Overall, we find scant association between honey production and relevant household demographic characteristics. 
+
+The spatial distribution of honey production, however, shows meaningful differences across households, with substantial variation in the number of honey producers in each region. Figure 
+\ref{fig:graph_honey_regional_counts} displays the breakdown
+of honey producers by region, with regions ordered from left to right by the percentage of honey producers.  We classify a region as a ``honey region'' if more than 20\% of the participants from that region report producing honey, leaving five of the eleven regions as honey regions. Figure \ref{fig:map_survey_regions} distinguishes between honey regions and non-honey regions. 
+
+In Tables \ref{table_summary_stats_nonhoney} 
+and \ref{table_summary_stats_honey} 
+we display summary statistics by region for honey and non-honey regions, as opposed to honey production itself. Table \ref{table_summary_regional} tests for statistically significant associations between regional characteristics and honey region status. We find that in general participants from
+honey regions are slightly older (4 years) and less likely to complete middle school (8\%) or high school (5\%). In addition, honey regions are slightly higher altitude (146m) and closer to the nearest county seat (10 km). The large variation in the quantity
+and percentage of honey producers by region is somewhat surprising, as  Table \ref{table_summary_honey} indicates that producer-level differences are not driving this outcome. For this reason we look at the effect of social learning in the next section. 
+
+\subsection{Social Learning and Honey Production}
+\label{social_learning}
+We consider honey production as an agricultural technology and examine the decision to produce honey in line with other work on technology adoption \parencite{federAdoptionAgriculturalInnovations1985, fosterLearningDoingLearning1995, fosterMicroeconomicsTechnologyAdoption2010, conleyLearningNewTechnology2010}. 
+ We  adopt the following conceptual model describing a producer's decision to adopt honey production, informed by conversations with  local partners in the coffee cooperative and in the spirit  of \textcite{conleyLearningNewTechnology2010}, in which
+a potential pineapple producer updates the expected profits from a particular amount of fertilizer by observing their own plots and the plots of others. 
+
+Our model provides two channels by which the decision to adopt a new technology may be affected by a producer's neighbors.
+Honey production involves an investment of both labor (L) and capital (K), with labor consisting of time spent beekeeping,
+and capital consisting of the wooden beehive and equipment used to harvest the honey. Our interviews indicate that the Tseltal honey producers almost always start with one beehive, and we 
+normalize the profit from the sale of this first beehive to 1. Moreover, we assume that there are no partial equilibrium effects: in other words, the market price of honey is not affected by the quantity of honey produced in this region, given the relatively small scale of individual production and large number of farmers.
+
+With this framework, we can write the condition for a producer $i$ to produce honey for the first time: 
+\begin{equation}
+\label{eq:hp_condition}
+    L_i + K_i + \mu_i - 1 > 0
+\end{equation}
+
+where $L_i$ is the expected cost of labor, $K_i$ the expected cost of beekeeping capital expenditures, and $\mu_i$ captures producer-level unobservables that may impact the production decision.
+
+We can use the model to illustrate the effect of
+having honey-producing neighbors on a producer's honey production
+decision. Consider two otherwise identical producers $j$ and $k$, such that $\mu_j = \mu_k$. Suppose that producer $j$ lives in a region with no other honey producers and producer $k$ lives in a ``honey region'' with a critical mass of honey producers. Living in a honey region affects condition \ref{eq:hp_condition} through two channels:
+\begin{enumerate}
+    \item $L_k < L_j$
+    \item $K_k < K_j$
+\end{enumerate}
+
+First, the expected amount of labor goes down because potential honey producers are able to observe other honey producers, learning by doing in the process and not requiring as much labor as someone trying honey production for the first time solo. Second, the expected amount of capital goes down because a potential honey producer can borrow or rent beekeeping supplies from neighbors, instead of traveling to a market and purchasing the gear. Thus it is possible that condition \ref{eq:hp_condition} could hold for producer $k$ but not producer $j$, and that producer $k$ could decide to produce honey as a result of their honey-producing neighbors. At the aggregate level, this model suggests that each additional honey producer decreases the cost of honey production for all non-producers in the region, and thus increases the likelihood that additional non-producers will adopt honey production. Depending on the distribution of $\mu$, the long run equilibrium could be that nearly all producers in a region
+adopt honey production. 
+
+While our study is based on a monthly farmer panel, the panel is collected via a single cross-sectional sample, so we cannot
+examine progressive adoption of honey production over time.
+Such analyses frequently find an S-shaped adoption curve for new technologies \parencite{grilichesHybridCornExploration1957, federAdoptionAgriculturalInnovations1985}, and Figure \ref{fig:graph_honey_regional_counts} notably resembles an S-shaped curve. It thus seems plausible that we could consider regions as capturing distinct moments in the evolution of a fundamentally similar population at different points in time.
+
+\subsection{Food Insecurity}
+\label{food_insecurity}
+We next clarify what we mean by food insecurity and how we measure it. \textcite{barrettMeasuringFoodInsecurity2010} describes three dimensions of food insecurity: availability of food, access to food, and utilization of food. The first dimension, availability, roughly corresponds to supply-side issues that can be measured at the national level. The second and third dimensions of access (whether people can eat) and utilization (what people do eat) correspond to demand-side issues that can be measured at the individual or household level. \textcite{senPovertyFaminesEssay1982} is credited
+with beginning the shift in emphasis from availability to access. Sen's exchange entitlement approach proposes that access to food is associated with subsistence farming and cash crop production. The former provides food that can be eaten directly, while the latter provides income that can be exchanged for food. This approach provides the theoretical foundation for this paper, which examines the effect of a second cash crop (honey) in addition to the primary cash crop (coffee) for the producers whom we survey. 
+
+Access to food is typically measured in one of two ways:
+either by the overall duration of the hungry season,
+or by the number of lean months in which producers report
+not having enough food
+\parencite{baconExplainingHungryFarmer2014, bellemareContractFarmingFood2017, anderzenEffectsOnfarmDiversification2020}.
+Tables \ref{table_summary_honey}, \ref{table_summary_stats_nonhoney}, \ref{table_summary_stats_honey}, and
+\ref{table_summary_regional} display
+the average number of lean months by region and by honey producer status. We do not find a significant difference between the average number of lean months by region or honey production.
+
+For this reason, we follow \textcite{morrisMesesFlacosSeasonal2013}
+and consider the timing of the lean months as well. We asked participants specifically in which months they did not have enough
+food to feed themselves or their families. In turn, we use this information to construct a balanced panel of month-producer cells, representing 3300 binary responses for 275 producers over 12 months.  
+
+Incorporating this time dimension into the analysis reveals
+monthly variation in reported food insecurity.
+Figure \ref{fig:graph_food_insecurity_exposure} displays incidence
+of food insecurity by month. Here we see the seasonal trends
+that \textcite{morrisMesesFlacosSeasonal2013, anderzenEffectsOnfarmDiversification2020}
+report. Food insecurity was found in all 12 months within the survey, but is highly concentrated during the pre-harvest lean season, with 94\% of all reported food insecurity occurring during the months of April through September.
+Five percent or less of the sample report
+experiencing food insecurity from November to March, after harvest. Food insecurity incidence then begins to increase in April, reaching its maximum at 47.3\% of the sample in July. In August slightly fewer producers report food insecurity, at 44\%, and then drops precipitously in September to 14.2\% as the harvest begins. 
+
+Breaking down food insecurity by month further reveals
+differences between honey producers and non-producers, as
+illustrated in Figure \ref{fig:graph_food_insecurity_honey_nonhoney}. 
+The general trend of increasing incidence of food insecurity is the same as in  Figure \ref{fig:graph_food_insecurity_exposure}, with a notable difference: from March through June, during the onset of the hungry season, and during peak honey production, honey producers
+report less food insecurity than non-producers. 
+
+Finally, Figure \ref{fig:graph_seasonal_effects} integrates
+administrative data from our partner cooperatives and the 
+household survey data that we collected. We present it
+with the caveat that not all of our participants
+were cooperative members. Nevertheless, it shows three
+stylized facts about the timing of income from coffee sales,
+income from honey sales, and reported food insecurity:
+\begin{enumerate}
+    \item Coffee producers receive income from coffee sales
+    beginning in December through April.
+    \item Honey producers receive income from honey sales
+    beginning in March through June.
+    \item Reported food insecurity increases beginning in April through September.
+\end{enumerate}
+
+We define the honey season as the months in which income
+from honey sales exceeds income from coffee sales: April, May, and June. In turn, we define the lean season as the months in which
+reported food insecurity exceeds a quarter of all respondents, i.e., June, July, and August. 
+
+\end{document}

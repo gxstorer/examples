@@ -1,0 +1,40 @@
+\begin{table}[htbp]\centering \small
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Monthly Variation in Food Insecurity \label{table_month_insecurity}}
+\begin{tabular}{l*{3}{cc}}
+\toprule
+                    &\multicolumn{2}{c}{(1)}           &\multicolumn{2}{c}{(2)}           &\multicolumn{2}{c}{(3)}           \\
+                    &\multicolumn{2}{c}{\textbf{Baseline}}&\multicolumn{2}{c}{\textbf{All Controls}}&\multicolumn{2}{c}{\textbf{Participant FE} }\\
+                    &Food Insecurity\textsuperscript{1}         &          SE&Food Insecurity\textsuperscript{1}         &          SE&Food Insecurity\textsuperscript{1}         &          SE\\
+\midrule
+February            &       -0.03\sym{*}  &      (0.01)&       -0.03\sym{*}  &      (0.01)&       -0.03\sym{*}  &      (0.01)\\
+March               &        0.01         &      (0.02)&        0.01         &      (0.02)&        0.01         &      (0.02)\\
+April               &        0.09\sym{***}&      (0.02)&        0.09\sym{***}&      (0.02)&        0.09\sym{***}&      (0.02)\\
+May                 &        0.14\sym{***}&      (0.03)&        0.14\sym{***}&      (0.03)&        0.14\sym{***}&      (0.03)\\
+June                &        0.28\sym{***}&      (0.03)&        0.28\sym{***}&      (0.03)&        0.28\sym{***}&      (0.03)\\
+July                &        0.43\sym{***}&      (0.03)&        0.43\sym{***}&      (0.03)&        0.43\sym{***}&      (0.03)\\
+August              &        0.40\sym{***}&      (0.03)&        0.40\sym{***}&      (0.03)&        0.40\sym{***}&      (0.03)\\
+September           &        0.10\sym{***}&      (0.03)&        0.10\sym{***}&      (0.03)&        0.10\sym{***}&      (0.03)\\
+October             &       -0.03\sym{**} &      (0.01)&       -0.03\sym{**} &      (0.01)&       -0.03\sym{**} &      (0.01)\\
+November            &       -0.03\sym{**} &      (0.01)&       -0.03\sym{**} &      (0.01)&       -0.03\sym{**} &      (0.01)\\
+December            &       -0.04\sym{***}&      (0.01)&       -0.04\sym{***}&      (0.01)&       -0.04\sym{***}&      (0.01)\\
+Constant\textsuperscript{3}&        0.04\sym{***}&      (0.01)&       -0.03         &      (0.05)&        0.04\sym{***}&      (0.01)\\
+\midrule
+Observations        &        3300         &            &        3300         &            &        3300         &            \\
+\(R^{2}\)           &       0.208         &            &       0.217         &            &       0.296         &            \\
+Observations        &       3,300         &            &       3,300         &            &       3,300         &            \\
+Participants        &         275         &            &         275         &            &         275         &            \\
+Months              &          12         &            &          12         &            &          12         &            \\
+\hline Regional Controls&          NO         &            &         YES         &            &         YES         &            \\
+Demographic Controls\textsuperscript{2}&         YES         &            &         YES         &            &          NO         &            \\
+Participant fixed effects&          NO         &            &          NO         &            &         YES         &            \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize Clustered\textsuperscript{4} standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize \textbf{1.} Dependent variable is a dummy which equals 1 if the producer reports food insecurity in a given month, 0 otherwise.}\\
+\multicolumn{7}{l}{\footnotesize \textbf{2.} Demographic Controls: Age, Gender, Education Level, Household Size, Dependents, Coffee Experience, Farm Size,}\\
+\multicolumn{7}{l}{\footnotesize Coffee Harvest, Income.}\\
+\multicolumn{7}{l}{\footnotesize \textbf{3.} January is the reference month.}\\
+\multicolumn{7}{l}{\footnotesize \textbf{4.} The standard errors are clustered at the participant level.}\\
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<.10\), \sym{**} \(p<.05\), \sym{***} \(p<.01\)}\\
+\end{tabular}
+\end{table}

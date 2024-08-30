@@ -1,0 +1,23 @@
+\begin{table}[htbp]\centering \small
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Effect of Honey Producers on total Food Insecurity \label{insecurity_means}}
+\begin{tabular}{l*{2}{c}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+                    &\multicolumn{1}{c}{  \textbf{Baseline}  }&\multicolumn{1}{c}{ \textbf{Demographic Controls}}\\
+                    &Food Insecurity         &Food Insecurity         \\
+\midrule
+Honey Producer      &       -0.18         &        0.02         \\
+                    &      (0.19)         &      (0.23)         \\
+\addlinespace
+Constant            &        1.85\sym{***}&        0.92         \\
+                    &      (0.09)         &      (0.60)         \\
+\midrule
+Observations        &         275         &         275         \\
+\(R^{2}\)           &       0.003         &       0.105         \\
+Demographic Controls&          NO         &         YES         \\
+\bottomrule
+\multicolumn{3}{c}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{3}{c}{\footnotesize \sym{*} \(p<.10\), \sym{**} \(p<.05\), \sym{***} \(p<.01\)}\\
+\end{tabular}
+\end{table}
