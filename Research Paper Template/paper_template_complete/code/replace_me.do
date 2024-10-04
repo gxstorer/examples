@@ -19,11 +19,11 @@ set scheme cblind1
 
 * Set Current Directory	******************************************************** 
 
-	if 		"`c(username)'" != "grants" { 	  									// (NOTE) 	Only Required for external users.
+	if 		"`c(username)'" != "GRANTS" { 	  									// (NOTE) 	Only Required for external users.
 				cd "X"															// (Required) // Replace "X" with directory path to project folder. Make sure project has all three folders above.
 }	
 
-	if 		"`c(username)'" == "grants" {
+	if 		"`c(username)'" == "GRANTS" {
 				cd "C:/Users/grants/OneDrive - Inter-American Development Bank Group/Documents/GitHub/examples/Research Paper Template/`project'/"
 } 																				// Will set current directory to Grant's path if username is listed as "GRANTS"
 
