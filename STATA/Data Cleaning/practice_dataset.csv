@@ -1,0 +1,101 @@
+﻿ID,First Name,Last Name,Age,City,Salary,Birthdate,Education Level
+1,Sophia,Smith,30,New York,70000,1/15/1992,Undergraduate
+2,Liam,Johnson,25,Los Angeles,50000,2/20/1998,High School
+3,Priya,Sharma,30,New York,68000,7/10/1993,Graduate
+4,Ethan,White,29,San Francisco,60000,4/5/1990,Didn't Graduate
+5,Mia,Davis,28,Miami,55000,5/12/1995,High School
+6,Noah,Wilson,22,Miami,48000,6/25/2001,Undergraduate
+7,Ava,Taylor,30,New York,75000,1/20/1992,Graduate
+8,Santiago,Garcia,40,Seattle,90000,7/30/1983,Graduate
+9,Isabella,Martinez,33,Boston,62000,8/22/1990,Undergraduate
+10,Alejandro,Rivera,27,New York,72000,10/5/1996,Didn't Graduate
+11,Benjamin,Lopez,31,Houston,74000,11/18/1992,Graduate
+12,Ella,Robinson,29,Philadelphia,68000,12/12/1994,Undergraduate
+13,Jacob,Clark,24,Phoenix,53000,1/14/1999,High School
+14,Charlotte,Lewis,36,Denver,80000,2/28/1987,Graduate
+15,Lucas,Hall,32,San Diego,,3/19/1991,Undergraduate
+16,Amelia,Young,26,Dallas,49000,4/15/1997,
+17,William,King,30,San Francisco,73000,5/25/1993,Graduate
+18,Harper,Wright,27,Chicago,60000,6/30/1996,High School
+19,Daniel,Scott,25,Seattle,52000,7/1/1998,Didn't Graduate
+20,Grace,Turner,34,Miami,64000,8/14/1989,Undergraduate
+21,Aiden,Hill,29,Boston,65000,9/20/1994,Graduate
+22,Natalie,Adams,40,Atlanta,90000,10/10/1983,Graduate
+23,Samuel,Garcia,22,Houston,48000000,12/15/2001,High School
+24,Emily,Johnson,30,New York,72000,1/15/1993,Undergraduate
+25,Michael,Smith,25,Los Angeles,58000,2/20/1998,High School
+26,Jessica,Brown,34,Chicago,75000,3/10/1989,Graduate
+27,David,Williams,28,San Francisco,69000,4/5/1995,Didn't Graduate
+28,Madison,Davis,29,Miami,60000,5/12/1994,High School
+29,Joshua,Martinez,31,Seattle,80000,6/25/1992,Undergraduate
+30,Olivia,Taylor,27,Boston,63000,7/30/1996,Graduate
+31,Ethan,Lee,22,Denver,54000,8/18/2001,High School
+32,Samantha,Clark,35,Houston,78000,9/14/1988,Graduate
+33,Christopher,Anderson,26,Atlanta,65,10/2/1997,Undergraduate
+34,Sofia,Garcia,30,Chicago,72000,1/5/1993,Graduate
+35,Diego,Rivera,28,San Diego,69000,2/14/1995,High School
+36,Valentina,Cruz,29,Miami,60000,3/25/1994,Undergraduate
+37,Mateo,Morales,34,Seattle,74000,4/30/1989,Graduate
+38,Isabella,Torres,27,Houston,63000,5/12/1996,High School
+39,Aarav,Patel,22,Orlando,52000,6/20/2001,Undergraduate
+40,Olivia,Brown,35,Chicago,80000,3/10/1988,Graduate
+41,Anjali,Desai,25,Chicago,55000,8/18/1998,High School
+42,Rohan,Kapoor,27,San Francisco,64000,9/1/1996,Undergraduate
+43,Kiran,Singh,34,Houston,73000,10/25/1989,Graduate
+44,Omar,Al-Farsi,29,Miami,65000,1/5/1994,High School
+45,Layla,Al-Mansoori,28,Atlanta,60000,2/14/1995,Undergraduate
+46,Yasmin,Khan,30,Denver,70000,3/30/1993,Graduate
+47,Amir,Nasr,31,San Diego,75000,4/20/1992,High School
+48,Zain,Ahmed,22,Houston,54000,5/18/2001,Undergraduate
+49,Ahmad,Ibrahim,34,Chicago,74000,6/10/1989,Graduate
+50,Fatima,Jamal,27,New York,62000,7/30/1996,High School
+51,Amina,Saeed,29,Seattle,60000,8/25/1994,Undergraduate
+52,Samir,Youssef,32,Boston,68000,9/14/1991,Graduate
+53,Noor,Mohammed,25,Denver,55000,10/5/1998,High School
+54,Olivia,Fisher,11151995,Miami,61000,11/15/1995,Undergraduate
+55,Ethan,Cruz,26,Chicago,59000,12/10/1997,Graduate
+56,David,Reyes,32,Atlanta,72000,1/30/1991,High School
+57,Aria,Wood,35,San Francisco,78000,2/25/1988,Graduate
+58,Nabil,Fadel,30,Los Angeles,69000,3/1/1993,Undergraduate
+59,Lila,Amin,24,Seattle,53000,4/22/1999,High School
+60,Aaliyah,Khan,29,Chicago,64000,5/15/1994,Graduate
+61,Amir,Hassan,26,Miami,60000,6/5/1997,Undergraduate
+62,Reem,Said,30,Atlanta,67000,7/30/1993,High School
+63,Zainab,Ibrahim,28,Houston,72000,8/15/1995,Graduate
+64,Sara,Nasr,32,Boston,71000,9/1/1991,Undergraduate
+65,Fawad,Rahman,25,Denver,54000,10/20/1998,High School
+66,Yasir,Khan,29,Los Angeles,68000,11/15/1994,Graduate
+67,Mira,,,,,,
+68,Layla,Mahmoud,34,San Francisco,77000,1/5/1989,Graduate
+69,Scarlett,Nelson,36,Denver,82000,1/12/1987,Graduate
+70,Henry,Carter,28,Phoenix,59000,2/20/1995,
+71,Priya,Patel,31,Orlando,71000,3/10/1991,Undergraduate
+72,Raj,Sharma,23,Sacramento,47000,5/1/2000,High School
+73,Anjali,Desai,38,Atlanta,85000,6/15/1985,Graduate
+74,Kiran,,29,Denver,59000,7/22/1994,Didn't Graduate
+75,Ayesha,Khan,32,Miami,62000,8/10/1991,Undergraduate
+76,Jack,Garcia,27,Los Angeles,68000,9/18/1996,Graduate
+77,Layla,Martinez,25,New York,54000,10/25/1998,High School
+78,Mei,Zhang,34,Seattle,79000,11/30/1989,Graduate
+79,Yuki,Tanaka,39,Chicago,86000,12/12/1984,Graduate
+80,Hana,Kim,22,Phoenix,50000,1/1/2001,Didn't Graduate
+81,Carter,Young,26,,55000,2/14/1997,Undergraduate
+82,Eleanor,Hall,29,Boston,60000,3/21/1994,High School
+83,Hiroshi,Yamamoto,31,Atlanta,73000,4/18/1992,Graduate
+84,Mei,Wong,28,Orlando,62000,5/30/1995,Undergraduate
+85,Jackson,Lee,35,Sacramento,72000,6/5/1988,Graduate
+86,Mia,Carter,24,San Francisco,50000,7/11/1999,Didn't Graduate
+87,Henry,Brown,33,New York,80000,8/17/1990,High School
+88,Amelia,White,26,Seattle,51000,9/25/1997,Undergraduate
+89,Nathan,Scott,30,Chicago,72000,10/30/1993,Graduate
+90,Nora,Martinez,34,Miami,64000,11/20/1989,High School
+91,Oliver,Johnson,29,Houston,68000,12/5/1994,Graduate
+92,Lily,Garcia,40,Denver,90000,1/15/1983,Graduate
+93,Ella,Lee,22,Boston,48000,2/10/2001,High School
+94,Ryan,Smith,31,Orlando,67000,3/28/1992,Undergraduate
+95,Ryan,Smith,31,Orlando,67000,3/28/1992,Undergraduate
+1,Sophia,Smith,30,New York,70000,1/15/1992,Undergraduate
+2,Liam,Johnson,25,Los Angeles,50000,2/20/1998,High School
+3,Olivia,Brown,35,Chicago,80000,3/10/1988,Graduate
+4,Ethan,White,29,San Francisco,60000,4/5/1990,Didn't Graduate
+5,Mia,Davis,28,Miami,55000,5/12/1995,High School
