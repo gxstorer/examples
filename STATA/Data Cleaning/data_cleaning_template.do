@@ -13,14 +13,26 @@ clear
 ********************************************************************************
 
 	sysuse 		auto, 		clear
-	
-	split 		make, 		gen(make_)
-	encode 		make_1, 	gen(brand)
-	replace 	make_2 	= 	make_2 + make_3
-	drop 		make_3
-	encode 		make_2, 	gen(model)
-	
 
+********************************************************************************
+****                                                                        ****
+****                        	 Edit Data                                  ****
+****                                                                        ****
+********************************************************************************
+
+** Splitting string variables													// To split up a variable the split command will create a new variable at every break within the string.	
+	split 		make, 		gen(make_)
+
+** encoding categorical string variable into numerical.							// For categorical data, it's beneficial to have the string description of the category while still having a numerical value attached to it.
+	encode 		make_1, 	gen(brand)
+	replace 	make_2 	= 	make_2 + make_3										
+	drop 		make_3
+	encode 		make_2, 	gen(model)											// This results in an encoded version of both the make and model in the dataset.
+	
+** Destring and Tostring variables.
+
+	tostring 	mpg, 		replace												
+	destring 	mpg, 		replace force 
 
 ********************************************************************************
 ****                                                                        ****
@@ -33,11 +45,8 @@ clear
 	codebook, compact															// Codebook (compact) is a concise way to view summary statistics of all variables without taking up too much space. 
 	codebook price																// Codebook combines summary and tabular data.
 																				// You can leave variable blank, but will probably display too much data to be practical to view.
-																				
-																				
-
+																																							
 ** List vs. Browse
-
 																				// List command will display data within the command window, while browse reshapes the data browser.
 																				// Observe that the same type of data will be displayed in both of these commands:
 
